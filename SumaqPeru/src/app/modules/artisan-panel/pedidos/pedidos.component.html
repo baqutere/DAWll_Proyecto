@@ -1,0 +1,29 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="order-list-container">
+  <h1>Listado de Pedidos</h1>
+  <table class="order-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre del Cliente</th>
+        <th>Nombre del Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Total</th>
+        <th>Fecha del Pedido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.customerName }}</td>
+        <td>{{ order.productName }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>S/ {{ order.totalPrice }}</td>
+        <td>{{ order.orderDate | date:'dd/MM/yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-footer></app-footer>

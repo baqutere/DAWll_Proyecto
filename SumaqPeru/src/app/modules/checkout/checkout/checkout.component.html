@@ -1,0 +1,119 @@
+<div class="checkout-container">
+  <div class="cabecera">
+    <img src="../../../../assets/images/logo.png" alt="Logo">
+    <h2>Verificar</h2>
+  </div>
+
+  <!-- Acordeón para los pasos del checkout -->
+  <div class="accordion">
+    <!-- Paso 0: Resumen de la Compra -->
+    <div class="accordion-item">
+      <input type="checkbox" id="step-0" class="accordion-checkbox" checked>
+      <label for="step-0" class="accordion-label">Resumen de la Compra</label>
+      <div class="accordion-content">
+        <div class="cart-summary">
+          <h4>Resumen de la Compra</h4>
+          <div class="cart-items">
+            <div class="cart-item" *ngFor="let item of carritoItems">
+              <img [src]="item.imagen" alt="{{ item.nombreProducto }}" class="item-image">
+              <div class="item-info">
+                <h4>{{ item.nombreProducto }}</h4>
+                <p>ID: {{ item.carritoId }}</p>
+                <p>Cantidad: {{ item.cantidad }}</p>
+                <p>Subtotal: S/ {{ item.subTotal }}</p>
+              </div>
+            </div>
+          </div>
+          <p>Total: S/ {{ total }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 1: Dirección de Envío -->
+    <div class="accordion-item">
+      <input type="checkbox" id="step-1" class="accordion-checkbox">
+      <label for="step-1" class="accordion-label">Dirección de Envío</label>
+      <div class="accordion-content">
+        <form (ngSubmit)="onAddressSubmit()">
+          <div class="form-group">
+            <label for="address">Cliente</label>
+            <input type="text" id="address" name="address" [value]="usuario.email" readonly>
+          </div>
+          <div class="form-group">
+            <label for="city">Dirección</label>
+            <select id="city" name="city" required (change)="onChangeDireccion($event)">
+              <option value="">Selecciona una Dirección</option>
+              <option *ngFor="let direccion of usuario.direcciones" [value]="direccion.direccionId">
+                {{ direccion.direccion }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="postal-code">Código Postal</label>
+            <input type="text" id="postal-code" name="postal-code" [value]="codPostal">
+          </div>
+          <div class="form-group">
+            <label for="shipping-date">Fecha de Envío</label>
+            <input type="date" id="shipping-date" name="shipping-date" required>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Paso 2: Pago -->
+    <div class="accordion-item">
+      <input type="checkbox" id="step-2" class="accordion-checkbox">
+      <label for="step-2" class="accordion-label">Método de pago</label>
+      <div class="accordion-content">
+        <form [formGroup]="paymentForm" (ngSubmit)="onPaymentSubmit()">
+          <div class="form-group">
+            <label for="card-number">Número de Tarjeta</label>
+            <input type="text" id="card-number" formControlName="cardNumber" (input)="formatCardNumber($event)" required>
+          </div>
+          <div class="form-group">
+            <label for="card-name">Nombre del Titular</label>
+            <input type="text" id="card-name" formControlName="cardName" required>
+          </div>
+          <div class="form-group">
+            <label for="card-expiration">Fecha de Expiración</label>
+            <div style="display: flex; gap: 10px;">
+              <select id="card-expiration-month" formControlName="cardExpirationMonth" required>
+                <option value="">MM</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <select id="card-expiration-year" formControlName="cardExpirationYear" required>
+                <option *ngFor="let year of [2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037]" [value]="year">{{ year }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="card-cvv">CVV</label>
+            <input type="text" id="card-cvv" formControlName="cardCvv" maxlength="3" required>
+          </div>
+          <button type="button" class="pay-button" [disabled]="!paymentForm.valid" (click)="onPaymentSubmit()">Pagar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal" [ngClass]="{'show': showSuccessModal}">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>Pago Realizado con Éxito</h2>
+      <p>Pedido Nº {{ pedidoRespuesta }}</p>
+      <p>Revisa tu bandeja de entrada para el seguimiento del pedido.</p>
+    </div>
+  </div>
+</div>

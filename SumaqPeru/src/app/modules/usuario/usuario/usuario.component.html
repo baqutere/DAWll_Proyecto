@@ -1,0 +1,24 @@
+<app-nav-bar></app-nav-bar>
+<div class="user-profile-card">
+  <!-- Imagen del perfil -->
+  <div class="profile-image-container">
+    <img src="assets/images/artesanias.jpg" alt="Imagen de perfil" class="profile-image">
+  </div>
+
+  <h2>Perfil de Usuario</h2>
+
+  <!-- Mostrar detalles del usuario -->
+  <div class="user-details">
+    <p><strong>Nombre:</strong> {{ user.name }}</p>
+    <p><strong>Dirección:</strong> {{ user.address }}</p>
+    <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+  </div>
+
+  <!-- Botones de acción -->
+  <div class="user-actions">
+    <button class="edit" routerLink="/user-edit">Editar</button>
+    <button (click)="deleteProfile()">Eliminar</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

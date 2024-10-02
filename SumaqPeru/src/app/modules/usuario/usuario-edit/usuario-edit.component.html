@@ -1,0 +1,46 @@
+<app-nav-bar></app-nav-bar>
+<div class="edit-profile-card">
+  <h2>Editar Perfil</h2>
+
+  <!-- Formulario de edición -->
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <!-- Imagen de perfil -->
+    <div class="image-upload-container">
+      <label for="profileImage" class="image-upload-label">Cambiar Imagen de Perfil</label>
+      <input type="file" id="profileImage" (change)="onImageChange($event)" accept="image/*">
+      <div class="profile-image-preview">
+        <img [src]="imagePreview" alt="Imagen de perfil" class="profile-image">
+      </div>
+    </div>
+
+    <!-- Campos del formulario -->
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" formControlName="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Dirección</label>
+      <input type="text" id="address" formControlName="address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Teléfono</label>
+      <input type="text" id="phone" formControlName="phone" required>
+    </div>
+
+    <div class="form-group">
+      <label for="birthDate">Fecha de Nacimiento</label>
+      <input type="date" id="birthDate" formControlName="birthDate" required>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="form-actions">
+
+      <button type="submit" routerLink="">Guardar</button>
+      <button type="button" routerLink="/user-profile">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,42 @@
+.edit-product-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #004d40;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #00332e;
+}
+
+.btn-secondary {
+  background-color: #646875;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #17004d;
+}

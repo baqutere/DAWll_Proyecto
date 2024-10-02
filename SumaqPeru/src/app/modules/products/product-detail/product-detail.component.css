@@ -1,0 +1,81 @@
+/* Estilo para el contenedor principal */
+.product-details-container {
+  display: flex;
+  justify-content: center; /* Centra el contenedor en el eje horizontal */
+  align-items: center; /* Centra el contenedor en el eje vertical */
+  padding: 20px;
+  gap: 50px; /* Espacio entre la imagen y la información */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra horizontalmente en el contenedor principal */
+  height: calc(100vh - 180px); /* Ajusta según el alto de tu navbar */
+}
+
+/* Estilo para la imagen del producto */
+.product-image {
+  flex: 1;
+  max-width: 700px; /* Tamaño máximo de la imagen */
+}
+
+.product-image img {
+  width: 100%;
+  height: 500px; /* Mantiene la proporción de la imagen */
+  object-fit: cover;
+  border-radius: 8px; /* Opcional: agrega bordes redondeados */
+}
+
+/* Estilo para la información del producto */
+.product-info {
+  flex: 1;
+  max-width: 600px; /* Tamaño máximo del área de información */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Estilo para los controles de cantidad */
+.quantity-controls {
+  display: flex;
+  align-items: center; /* Centra verticalmente los botones y el texto */
+  margin: 10px 0;
+}
+
+.quantity-controls button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.quantity-controls span {
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+/* Estilo para los botones */
+.add-to-cart-button,
+.go-back-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.add-to-cart-button {
+  background-color: #004d40;
+  color: #ffffff;
+}
+
+.add-to-cart-button:hover {
+  background-color: #00332e;
+}
+
+.go-back-button {
+  background-color: #646875;
+  color: #ffffff;
+}
+
+.go-back-button:hover {
+  background-color: #17004d;
+}

@@ -1,0 +1,199 @@
+.contCar {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el carrusel dentro del contenedor */
+  align-items: center; /* Centra verticalmente el carrusel dentro del contenedor */
+}
+
+.dsc-carousel {
+  width: 80%; /* Ajusta el ancho del carrusel */
+  height: 65vh; /* Ajusta la altura del carrusel para ocupar todo el espacio del contenedor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dsc-carousel::before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(248, 248, 248, 0.48);
+}
+
+.dsc-carousel__content {
+  text-align: center;
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  overflow: hidden;
+}
+
+.dsc-carousel__content-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1s all ease-in;
+  padding-left: 180px; /* Espaciado desde el borde izquierdo */
+}
+
+.dsc-carousel__content-item h1 {
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  z-index: 1;
+  margin: 0; /* Elimina márgenes adicionales */
+}
+
+.dsc-carousel__content-item h1 span {
+  color: rgb(38, 38, 39);
+}
+
+.dsc-carousel__content-item h2 {
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 1;
+  margin: 10px 0; /* Espaciado entre h1 y h2 */
+}
+
+.dsc-carousel__content-item p {
+  z-index: 1;
+  color: rgb(226, 193, 149);
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 10px; /* Espaciado entre h2 y p */
+}
+
+.dsc-carousel__btns {
+  position: absolute;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dsc-carousel__btns > i {
+  opacity: 0.7;
+  color: beige;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.dsc-carousel__steps {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dsc-carousel__steps-step {
+  height: 8px;
+  width: 25px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: 0.75s all ease-in-out;
+}
+
+.dsc-carousel__steps-step:hover,
+.dsc-carousel__steps-step-active {
+  opacity: 0.7;
+  background: #fff;
+}
+
+/* Media Queries para Responsividad */
+
+/* Dispositivos pequeños (móviles) */
+@media (max-width: 768px) {
+  .dsc-carousel {
+    width: 100%;
+    height: 50vh; /* Reduce la altura para pantallas pequeñas */
+  }
+
+  .dsc-carousel__content-item {
+    padding-left: 20px; /* Reduce el padding para pantallas pequeñas */
+  }
+
+  .dsc-carousel__content-item h1 {
+    font-size: 24px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
+
+  .dsc-carousel__content-item h2 {
+    font-size: 18px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
+
+  .dsc-carousel__content-item p {
+    font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
+
+  .dsc-carousel__btns > i {
+    font-size: 30px; /* Ajusta el tamaño de los botones de navegación */
+  }
+}
+
+/* Dispositivos medianos (tabletas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .dsc-carousel {
+    width: 90%; /* Aumenta el ancho en tabletas */
+    height: 55vh; /* Ajusta la altura para tabletas */
+  }
+
+  .dsc-carousel__content-item {
+    padding-left: 40px; /* Ajusta el padding para tabletas */
+  }
+
+  .dsc-carousel__content-item h1 {
+    font-size: 28px; /* Ajusta el tamaño de fuente para tabletas */
+  }
+
+  .dsc-carousel__content-item h2 {
+    font-size: 20px; /* Ajusta el tamaño de fuente para tabletas */
+  }
+
+  .dsc-carousel__content-item p {
+    font-size: 16px; /* Ajusta el tamaño de fuente para tabletas */
+  }
+
+  .dsc-carousel__btns > i {
+    font-size: 35px; /* Ajusta el tamaño de los botones de navegación */
+  }
+}
+
+/* Dispositivos grandes (escritorios) */
+@media (min-width: 1025px) {
+  .dsc-carousel {
+    width: 80%; /* Mantiene el ancho para pantallas grandes */
+    height: 65vh; /* Mantiene la altura para pantallas grandes */
+  }
+
+  .dsc-carousel__content-item {
+    padding-left: 180px; /* Mantiene el padding para pantallas grandes */
+  }
+
+  .dsc-carousel__content-item h1 {
+    font-size: 36px; /* Ajusta el tamaño de fuente para pantallas grandes */
+  }
+
+  .dsc-carousel__content-item h2 {
+    font-size: 28px; /* Ajusta el tamaño de fuente para pantallas grandes */
+  }
+
+  .dsc-carousel__content-item p {
+    font-size: 17px; /* Mantiene el tamaño de fuente para pantallas grandes */
+  }
+
+  .dsc-carousel__btns > i {
+    font-size: 45px; /* Mantiene el tamaño de los botones de navegación */
+  }
+}

@@ -1,0 +1,24 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="product-details-container">
+  <div class="product-image">
+    <img [src]="product.imagen" [alt]="product.nombre">
+  </div>
+  <div class="product-info">
+    <h1>{{ product.nombre }}</h1>
+    <p>ID: {{ product.productoId }}</p>
+    <p>{{ product.descripcion }}</p>
+    <p>Precio: S/ {{ product.precio }}</p>
+
+    <div class="quantity-controls">
+      <button (click)="decreaseQuantity()">-</button>
+      <span>{{ quantity }}</span>
+      <button (click)="increaseQuantity()">+</button>
+    </div>
+
+    <button class="add-to-cart-button" (click)="addCartItem(product)">Añadir al Carrito</button>
+    <button class="go-back-button" (click)="goBack()">Regresar</button>
+  </div>
+</div>
+
+<app-footer></app-footer>

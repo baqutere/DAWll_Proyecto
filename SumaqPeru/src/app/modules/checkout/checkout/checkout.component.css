@@ -1,0 +1,245 @@
+.checkout-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Color de fondo más claro */
+  border-radius: 8px; /* Bordes redondeados para un aspecto más suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+.cabecera {
+  background-color: #aed1db;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+  border-bottom: 2px solid #ddd;
+}
+
+.cabecera img {
+  height: 50px;
+}
+
+.cabecera h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 1.5em; /* Tamaño de fuente más grande */
+  color: #333; /* Color de texto más oscuro para contraste */
+}
+
+.accordion {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-checkbox {
+  display: none;
+}
+
+.accordion-label {
+  display: block;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #e9ecef;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s;
+}
+
+.accordion-label:hover {
+  background-color: #e2e6ea;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 15px;
+}
+
+.accordion-checkbox:checked + .accordion-label + .accordion-content {
+  max-height: 1000px; /* Ajusta según el contenido */
+  padding: 15px;
+}
+.cart-summary {
+  margin-bottom: 15px;
+}
+
+.cart-summary h4 {
+  font-size: 22px;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.item-info h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.item-info p {
+  margin: 5px 0;
+}
+
+.cart-summary p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4H1z" fill="%23888888"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+.next-button,
+.pay-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.next-button:hover,
+.pay-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+.pay-button {
+  background-color: #28a745;
+}
+
+.pay-button:hover {
+  background-color: #218838;
+}
+/* Checkout component styles */
+.checkout-container {
+  padding: 20px;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+}
+
+.accordion-label {
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  display: block;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pay-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

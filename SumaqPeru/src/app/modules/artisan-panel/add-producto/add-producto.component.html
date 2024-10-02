@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="edit-product-container">
+  <h1>Agregar Producto</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input id="name" formControlName="name" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="price">Precio</label>
+      <input id="price" formControlName="price" type="number" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="image">Imagen</label>
+      <input id="image" type="file" (change)="onImageChange($event)" class="form-control">
+      <div *ngIf="imagePreview" class="image-preview">
+        <img [src]="imagePreview" alt="Vista previa de la imagen" class="img-thumbnail">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <button type="button" class="btn btn-secondary" routerLink="/product-artisan">Cancelar</button>
+  </form>
+</div>
+
+<app-footer></app-footer>

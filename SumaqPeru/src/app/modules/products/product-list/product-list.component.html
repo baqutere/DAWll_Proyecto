@@ -1,0 +1,45 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="product-list-container">
+  <div class="filters-container">
+    <div class="filter-section">
+      <h1>Productos</h1><br><br>
+      <h3>Buscar</h3>
+      <input #searchInput type="text" id="search-bar" placeholder="Buscar productos...">
+      <button class="btn btn-success" (click)="onSearch(searchInput.value)">Buscar</button>
+    </div>
+
+    <div class="filter-section">
+      <h3>Filtrar por Precio</h3>
+      <select id="price-filter" (change)="onPriceChange($event, searchInput.value)">
+        <option value="">Todos los Rangos</option>
+        <option value="asc">Bajo a Alto</option>
+        <option value="desc">Alto a Bajo</option>
+      </select>
+    </div>
+
+    <div class="filter-section">
+      <h3>Filtrar por Categoría</h3>
+      <select id="price-filter" (change)="onCategoryChange($event)">
+        <option *ngFor="let categoria of listCategoria" [value]="categoria.categoriaId">
+          {{ categoria.nombre }}
+        </option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let product of listProducto">
+      <img [src]="product.imagen" [alt]="product.nombre" class="product-image">
+      <div class="product-info">
+        <h4>{{ product.nombre }}</h4>
+        <p>S/ {{ product.precio }}</p>
+        <a type="button" class="view-details-button" [routerLink]="['/products-detail', product.productoId]">Ver Detalle</a>
+        <button class="add-to-cart-button" (click)="addCartItem(product)">Añadir al Carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

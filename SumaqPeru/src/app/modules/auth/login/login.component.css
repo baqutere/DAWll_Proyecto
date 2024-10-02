@@ -1,0 +1,127 @@
+/* Estilo general del body para ocupar toda la pantalla */
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor de la imagen de fondo */
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  overflow: hidden; /* Asegura que nada se desborde del contenedor */
+}
+
+/* Estilo para la imagen de fondo */
+.background-image {
+  width: 100%;
+  height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+/* Contenedor del contenido sobrepuesto */
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el contenido vertical y horizontalmente */
+  width: 100%;
+  max-width: 400px; /* Ancho máximo del formulario */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centra el texto del formulario */
+}
+
+/* Estilo para el encabezado */
+h2 {
+  margin-bottom: 20px;
+  color: #004d40; /* Turquesa oscuro */
+}
+
+/* Estilo para los grupos de formulario */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left; /* Alinea el texto de las etiquetas a la izquierda */
+}
+
+/* Estilo para las etiquetas de formulario */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #004d40; /* Turquesa oscuro */
+}
+
+/* Estilo para los campos de entrada */
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b2dfdb; /* Borde turquesa claro */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estilo para el botón de ingreso */
+button.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #004d40; /* Turquesa oscuro */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button.login-button:hover {
+  background-color: #00332e; /* Turquesa más oscuro */
+}
+
+/* Estilo para los botones de inicio de sesión social */
+.social-login {
+  margin-top: 20px;
+}
+
+.social-login p {
+  margin-bottom: 10px;
+  color: #004d40; /* Turquesa oscuro */
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  margin: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-button i {
+  margin-right: 8px;
+}
+
+.social-button.google {
+  background-color: #db4437; /* Rojo de Google */
+}
+
+.social-button.facebook {
+  background-color: #3b5998; /* Azul de Facebook */
+}
+
+.social-button.google:hover {
+  background-color: #c1351d; /* Rojo más oscuro de Google */
+}
+
+.social-button.facebook:hover {
+  background-color: #2d4373; /* Azul más oscuro de Facebook */
+}

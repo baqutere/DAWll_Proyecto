@@ -1,0 +1,62 @@
+<nav class="navbar navbar-light bg:#fffff">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    <img src="assets/images/logo.png" routerLink="/inicio" alt="Logo" style="width: 180px; height: auto;">
+    <form class="d-flex flex-grow-1 justify-content-center me-3" role="search">
+      <input class="form-control search-bar" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-danger" type="submit" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+    <div class="icon-container d-flex align-items-center">
+      <p class="nav-text btn" routerLink="/login" *ngIf="!isAuthenticated">
+        Iniciar Sesión
+        <i class="fa-solid fa-user ms-2"></i>
+      </p>
+      <p class="nav-text btn" routerLink="/cart">
+        Carrito
+        <i class="fa-solid fa-cart-shopping ms-2"></i>
+      </p>
+      <div *ngIf="isAuthenticated" class="user-info d-flex align-items-center">
+        <img [src]="userPhoto" alt="User Photo" class="user-photo">
+        <p class="nav-text ms-2">Bienvenido, {{ userName }}!</p>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="content d-flex align-items-center">
+  <button class="open-btn" (click)="toggleSidebar()">☰</button>
+</div>
+<div class="overlay" [ngClass]="{'active': isSidebarOpen}" (click)="toggleSidebar()"></div>
+<nav class="sidebar" [ngClass]="{'active': isSidebarOpen}">
+  <button class="close-btn" (click)="toggleSidebar()">×</button>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/inicio" (click)="toggleSidebar()">
+        <i class="fa-solid fa-home"></i> Inicio
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/products" (click)="toggleSidebar()">
+        <i class="fa-solid fa-list"></i> Productos
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="" (click)="togglePanel($event)">
+        <i class="fa-solid fa-cogs"></i> Tu Cuenta
+      </a>
+      <ul class="nav flex-column sub-menu" [ngClass]="{'show': isPanelOpen}">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user-profile">
+            <i class="fa-solid fa-user"></i> Perfil
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,13 @@
+<div class="content-section">
+  <h1 class="section-title">Descubre la Magia de Nuestros Productos</h1>
+  <div class="cont">
+    <div class="content-box" *ngFor="let item of contentItems">
+      <img [src]="item.image" alt="{{ item.title }}" class="content-box__image">
+      <div class="content-box__overlay">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.subtitle }}</p>
+        <a routerLink="/products" class="content-box__link">Ver más ...</a>
+      </div>
+    </div>
+  </div>
+</div>

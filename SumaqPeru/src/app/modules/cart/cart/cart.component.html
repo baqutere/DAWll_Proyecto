@@ -1,0 +1,35 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="cart-container">
+  <h2>Carrito de Compras</h2>
+
+  <div class="cart-items">
+    <div class="cart-item" *ngFor="let item of carritoItems">
+      <img [src]="item.imagen" class="item-image">
+      <div class="item-info">
+        <h3>{{ item.nombreProducto }}</h3>
+        <p>ID: {{ item.productoId }}</p>
+        <p>Precio: S/ {{ item.precio }}</p>
+        <p>Cantidad:
+          <button (click)="updateQuantity(item, -1)" [disabled]="item.cantidad <= 1">-</button>
+          {{ item.cantidad }}
+          <button (click)="updateQuantity(item, 1)">+</button>
+        </p>
+        <p>Subtotal: S/ {{ item.subTotal }}</p>
+      </div>
+      <div class="item-actions">
+        <button type="button" class="remove-button" (click)="removeItem(item)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-summary">
+    <p>Total: S/ {{ total }}</p>
+  </div>
+
+  <div class="cart-buttons">
+    <a type="button" class="checkout-button" routerLink="/checkout" (click)="actualizarCarrito()">Realizar Pedido</a>
+  </div>
+</div>
+
+<app-footer></app-footer>

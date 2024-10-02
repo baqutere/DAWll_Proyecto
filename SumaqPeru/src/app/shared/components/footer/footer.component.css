@@ -1,0 +1,92 @@
+/* src/app/shared/components/footer/footer.component.css */
+.footer {
+  background-color: #03374e;
+  color: #fff;
+  padding: 20px;
+  padding-top: 120px;
+  font-size: 14px;
+  padding-left: 100px;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 55px;
+  border-bottom: 1px solid #33779e;
+  margin-right: 60px;
+}
+
+.footer__section {
+
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer__section h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer__section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer__section ul li {
+  margin-bottom: 5px;
+}
+
+.footer__section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  text-align: center;
+  padding-top: 20px;
+
+}
+
+/* Responsivo */
+
+/* Dispositivos pequeños (móviles) */
+@media (max-width: 768px) {
+  .footer {
+    padding-left: 20px; /* Reduce el padding en pantallas pequeñas */
+    padding-top: 80px; /* Ajusta el padding superior para pantallas pequeñas */
+  }
+
+  .footer__top {
+    flex-direction: column; /* Cambia la dirección del flex para apilar los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+
+  .footer__section {
+    padding: 0 10px; /* Reduce el padding horizontal para pantallas pequeñas */
+    text-align: center; /* Centra el texto para pantallas pequeñas */
+  }
+
+  .footer__bottom {
+    padding-top: 10px; /* Ajusta el padding superior en la parte inferior del footer */
+  }
+}
+
+/* Dispositivos medianos (tabletas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer {
+    padding-left: 40px; /* Ajusta el padding izquierdo para pantallas medianas */
+    padding-top: 100px; /* Ajusta el padding superior para pantallas medianas */
+  }
+
+  .footer__top {
+    flex-direction: row; /* Alinea los elementos en fila para pantallas medianas */
+  }
+
+  .footer__section {
+    padding: 0 15px; /* Ajusta el padding horizontal para pantallas medianas */
+  }
+}

@@ -1,0 +1,255 @@
+
+.page-background {
+    background-color: #E6E6E6;
+  }
+
+  .navbar .content {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+  }
+
+  .navbar .logo {
+    height: 62px;
+  }
+
+  .navbar .search-bar {
+    width: 70%;
+    max-width: 60%;
+  }
+
+  .navbar .btn-outline-success {
+    white-space: nowrap;
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: -430px;
+    background-color: #03374e;
+    color: #fff;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 2;
+  }
+
+  .navbar {
+    background-color: #f8f9fa; /* Color de fondo para la barra de navegación */
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .sidebar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .sidebar .nav-item {
+    padding: 8px 16px;
+  }
+
+  .sidebar .nav-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar .nav-link:hover {
+    background-color: #bebc2b;
+  }
+
+  .sub-menu {
+    display: none;
+    padding-left: 20px;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
+  }
+
+  .sub-menu.show {
+    display: block;
+    max-height: 500px; /* Ajusta según el contenido */
+    opacity: 1;
+  }
+
+  /* Agrega estos estilos para el usuario autenticado */
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.nav-text {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.nav-text:hover {
+  color: #1296b8;
+}
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.712);
+    display: none;
+    z-index: 1;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+
+  .content {
+    background-color: #03374e;
+  }
+
+  .open-btn {
+    background-color: #03374e;
+    margin-left: 0.5rem;
+    border: none;
+    color: #FFC000;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.3rem;
+  }
+
+  .open-btn:hover {
+    color: #ff7b00;
+  }
+
+  .icon-container {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos dentro del contenedor */
+  }
+
+  .nav-text {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el texto y los íconos */
+    margin-right: 20px; /* Espacio entre los elementos, ajusta según sea necesario */
+  }
+
+  .nav-text:hover{
+    color: #1296b8; /* Espacio entre los elementos, ajusta según sea necesario */
+  }
+
+  .nav-text i {
+    font-size: 18px; /* Tamaño del ícono, ajusta según sea necesario */
+  }
+
+  .nav-text i:hover {
+    color: #1296b8;
+  }
+
+  .nav-text.ms-2 {
+    margin-left: 8px; /* Espacio entre el texto y el ícono, ajusta según sea necesario */
+  }
+
+  /* Estilo para el contenedor principal */
+  .Contenido {
+    background-color: #E6E6E6;
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    width: 100vw;  /* Asegura que ocupe toda la anchura de la ventana */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el tamaño total */
+  }
+
+  /* Estilo para la sección dentro del contenedor */
+  .Seccion {
+    background-color: #2E75B6;
+    height:100%; /* Puedes ajustar la altura según sea necesario */
+    width: 90%; /* Ocupa el 80% del ancho del contenedor */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el tamaño total */
+  }
+
+  /* Estilo para el encabezado dentro de la sección */
+  .Seccion h1 {
+    color: #fff; /* Color del texto, ajusta según sea necesario */
+  }
+
+  .primero{
+    margin-bottom: 16rem;
+    background-color: #F2F2F2;
+    height: 600px; /* Puedes ajustar la altura según sea necesario */
+    width: 75%; /* Ocupa el 80% del ancho del contenedor */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    box-sizing: border-box;
+  }
+
+
+  /* Estilo para la sección */
+  section {
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding: 20px; /* Añade espacio alrededor del contenido */
+  }
+
+  /* Estilo para el título principal (h1) */
+  section .porcentaje {
+    font-size: 6rem; /* Tamaño de la fuente, ajusta según sea necesario */
+    font-weight: bold; /* Texto en negrita */
+    color: #16aa54; /* Color del texto, ajusta según sea necesario */
+    margin-bottom: 0.5rem; /* Espacio inferior */
+  }
+
+  /* Estilo para el título secundario (h2) */
+  section h2 {
+    font-size: 3rem; /* Tamaño de la fuente, ajusta según sea necesario */
+    font-weight: bold; /* Texto en negrita */
+    color: #154153; /* Color del texto, ajusta según sea necesario */
+    margin-bottom: 0.5rem; /* Espacio inferior */
+  }
+
+  /* Estilo para el título terciario (h3) */
+  section h3 {
+    font-size: 2rem; /* Tamaño de la fuente, ajusta según sea necesario */
+    font-weight: bold; /* Texto en negrita */
+    color: #0c240d; /* Color del texto, ajusta según sea necesario */
+    margin-bottom: 1rem; /* Espacio inferior */
+  }
+
+  /* Estilo para el enlace */
+  section a {
+    display: inline-block; /* Permite ajustar el tamaño del enlace */
+    font-size: 1rem; /* Tamaño de la fuente del enlace */
+    color: #007BFF; /* Color del texto del enlace */
+    margin-top: 20px; /* Espacio superior */
+  }
+
+  /* Estilo para el enlace al pasar el ratón */
+  section a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+  }
